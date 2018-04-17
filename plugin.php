@@ -48,7 +48,7 @@ class Yoast_To_REST_API {
 
 		// Pages
 		register_rest_field( 'page',
-			'yoast_meta',
+			'seo_meta',
 			array(
 				'get_callback'    => array( $this, 'wp_api_encode_yoast' ),
 				'update_callback' => array( $this, 'wp_api_update_yoast' ),
@@ -58,7 +58,7 @@ class Yoast_To_REST_API {
 
 		// Category
 		register_rest_field( 'category',
-			'yoast_meta',
+			'seo_meta',
 			array(
 				'get_callback'    => array( $this, 'wp_api_encode_yoast_category' ),
 				'update_callback' => null,
@@ -68,7 +68,7 @@ class Yoast_To_REST_API {
 
 		// Tag
 		register_rest_field( 'tag',
-			'yoast_meta',
+			'seo_meta',
 			array(
 				'get_callback'    => array( $this, 'wp_api_encode_yoast_tag' ),
 				'update_callback' => null,
@@ -84,7 +84,7 @@ class Yoast_To_REST_API {
 
 		foreach ( $types as $key => $type ) {
 			register_rest_field( $type,
-				'yoast_meta',
+				'seo_meta',
 				array(
 					'get_callback'    => array( $this, 'wp_api_encode_yoast' ),
 					'update_callback' => array( $this, 'wp_api_update_yoast' ),
