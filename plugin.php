@@ -38,7 +38,7 @@ class Yoast_To_REST_API {
 	function add_yoast_data() {
 		// Posts
 		register_rest_field( 'post',
-			'yoast_meta',
+			'seo_meta',
 			array(
 				'get_callback'    => array( $this, 'wp_api_encode_yoast' ),
 				'update_callback' => array( $this, 'wp_api_update_yoast' ),
@@ -127,9 +127,9 @@ class Yoast_To_REST_API {
 		the_post();
 
 		$yoast_meta = array(
-			'yoast_wpseo_title'     => $wpseo_frontend->get_content_title(),
-			'yoast_wpseo_metadesc'  => $wpseo_frontend->metadesc( false ),
-			'yoast_wpseo_canonical' => $wpseo_frontend->canonical( false ),
+			'seo_title'     => $wpseo_frontend->get_content_title(),
+			'seo_metadesc'  => $wpseo_frontend->metadesc( false ),
+			'seo_canonical' => $wpseo_frontend->canonical( false ),
 		);
 
 		wp_reset_query();
@@ -142,8 +142,8 @@ class Yoast_To_REST_API {
 		$wpseo_frontend->reset();
 
 		$yoast_meta = array(
-			'yoast_wpseo_title'    => $wpseo_frontend->get_taxonomy_title(),
-			'yoast_wpseo_metadesc' => $wpseo_frontend->metadesc( false ),
+			'seo_title'    => $wpseo_frontend->get_taxonomy_title(),
+			'seo_metadesc' => $wpseo_frontend->metadesc( false ),
 		);
 
 		return (array) $yoast_meta;
