@@ -9,10 +9,10 @@ Returns Yoast post or page metadata in a normal post or page request. Stores the
 {
   id: 123,
   ...
-  yoast_meta: {
-    yoast_wpseo_title: "Testy Test | My WordPress site",
-    yoast_wpseo_metadesc: "My description",
-    yoast_wpseo_canonical: "http://my-wordpress-site.test/testy-test"
+  seo_meta: {
+    seo_title: "Testy Test | My WordPress site",
+    seo_metadesc: "My description",
+    seo_canonical: "http://my-wordpress-site.test/testy-test"
   }
 }
 ```
